@@ -37,6 +37,21 @@
     <hr />
 
     <!-- TODO #2 - Loop over jobs map to display all job fields -->
+   <!-- Create table to display each job individually  make sure to add the CSS class "job-listing" to the tables -->
+
+
+        <h2 th:text="${results}" ></h2>
+
+        <table class ="job-listing" th:each="job : ${jobs}">
+
+        <tr th:each="element, idx : ${job}" th:class="${idx.odd} ? 'odd' ">
+
+            <td th:text="${element.key}"></td>
+            <td th:text="${element.value}"></td>
+
+        </tr>
+    </table>
+
 
 </div>
 
